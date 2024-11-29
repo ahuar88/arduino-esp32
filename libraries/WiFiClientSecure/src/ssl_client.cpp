@@ -227,7 +227,7 @@ int start_ssl_client(sslclient_context *ssl_client, const IPAddress& ip, uint32_
         return -1;
     }
 
-    if (!insecure && cli_cert != NULL && cli_key != NULL) {
+    if (/*!insecure && */cli_cert != NULL && cli_key != NULL) {
         mbedtls_x509_crt_init(&ssl_client->client_cert);
         mbedtls_pk_init(&ssl_client->client_key);
 
